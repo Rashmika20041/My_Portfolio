@@ -14,6 +14,7 @@ const Preloader = () => {
         initial={{ scale: 0.8 }}
         animate={{ scale: 1.1 }}
         transition={{ repeat: Infinity, repeatType: "reverse", duration: 1 }}
+        style={{ fontFamily: "'Bebas', Bebas Neue" }}
       >
         Welcome to My Portfolio
       </motion.h1>

@@ -41,7 +41,10 @@ const Dashboard = () => {
               <h2 className="text-white text-4xl font-semibold mb-5 select-none">
                 I'm a{" "}
                 <span
-                  style={{ color: "#04AA6D", fontFamily: "'Poppins', sans-serif" }}
+                  style={{
+                    color: "#04AA6D",
+                    fontFamily: "'Poppins', sans-serif",
+                  }}
                 >
                   <Typewriter
                     words={[
