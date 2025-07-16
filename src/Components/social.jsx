@@ -9,7 +9,7 @@ const Social = () => {
       initial={{ opacity: 0, x: 40 }}
       whileInView={{ opacity: 1, x: 0 }}
       viewport={{ once: true }}
-      transition={{ duration: 1.0 }}
+      transition={{ delay: 2.5, duration: 1.0 }}
     >
       <ul className=" flex flex-col items-center space-y-5 pr-10">
         <li>
