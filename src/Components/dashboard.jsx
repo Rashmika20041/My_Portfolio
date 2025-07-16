@@ -8,7 +8,6 @@ import Footer from "./footer";
 import Social from "./social";
 import Recognitions from "./recognitions";
 import { Typewriter } from "react-simple-typewriter";
-import { ImOffice } from "react-icons/im";
 
 const Dashboard = () => {
   return (
