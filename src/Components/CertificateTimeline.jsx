@@ -16,14 +16,6 @@ const certificates = [
     type: "image",
   },
   {
-    id: "cert2",
-    title: "Meta Advanced React",
-    platform: "Coursera",
-    date: "Dec 2023",
-    file: AdvancedReact,
-    type: "image",
-  },
-  {
     id: "cert3",
     title: "Google Crash Course on Python",
     platform: "Coursera",
@@ -31,6 +23,15 @@ const certificates = [
     file: Python,
     type: "image",
   },
+  {
+    id: "cert2",
+    title: "Meta Advanced React",
+    platform: "Coursera",
+    date: "Dec 2023",
+    file: AdvancedReact,
+    type: "image",
+  },
+  
 ];
 
 const CertificateTimeline = () => {
