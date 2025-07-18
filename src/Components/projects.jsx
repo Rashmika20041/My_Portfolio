@@ -77,7 +77,7 @@ const Projects = () => {
       </div>
 
       <p
-        className="text-left italic text-sm md:text-lg text-gray-400 mt-14 max-w-[90%] md:max-w-[70%] mx-auto leading-relaxed"
+        className="text-left italic text-sm md:text-lg text-gray-400 mt-14 max-w-[90%] md:max-w-[87%] mx-auto leading-relaxed"
         style={{ fontFamily: "'Poppins', sans-serif", fontWeight: "500" }}
       >
         While my featured projects below highlight some of my proudest work,
