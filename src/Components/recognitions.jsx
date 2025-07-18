@@ -47,7 +47,7 @@ export default function Recognitions() {
             `}
         </style>
 
-        <div className="flex flex-col items-center justify-center h-full text-white">
+        <div className="flex flex-col items-center justify-center h-full text-white mt-30">
           <h1 className="sm:text-sm md:text-lg text-gray-400">Milestones of Growth</h1>
 
           <div className="relative inline-block mb-13 mt-4 md:w-[700px] ">
