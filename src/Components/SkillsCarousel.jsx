@@ -147,7 +147,7 @@ export default function SkillsCarousel() {
                   opacity: isCenter ? 1 : 0.3,
                 }}
                 transition={{ duration: 0.3 }}
-                className={`w-42 h-42 flex items-center justify-center rounded-full shadow-md select-none ${
+                className={`md:w-42 h-42 flex items-center justify-center rounded-full shadow-md select-none ${
                   isCenter
                     ? "bg-[#04AA6D]/20 ring-2 ring-[#04AA6D]"
                     : "bg-white/5"

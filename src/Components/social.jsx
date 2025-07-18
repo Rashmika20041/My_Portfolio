@@ -5,11 +5,11 @@ import { motion } from "framer-motion";
 const Social = () => {
   return (
     <motion.div
-      className="fixed top-3/4 right-0 transform -translate-y-1/2 z-50"
+      className="fixed top-3/4 md:right-0 transform -translate-y-1/2 z-50"
       initial={{ opacity: 0, x: 40 }}
       whileInView={{ opacity: 1, x: 0 }}
       viewport={{ once: true }}
-      transition={{ delay: 2.5, duration: 1.0 }}
+      transition={{ delay: 1.0, duration: 0.5 }}
     >
       <ul className=" flex flex-col items-center space-y-5 pr-10">
         <li>

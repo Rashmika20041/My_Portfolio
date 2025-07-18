@@ -50,7 +50,7 @@ export default function Recognitions() {
         <div className="flex flex-col items-center justify-center h-full text-white">
           <h1 className="text-lg text-gray-400">Milestones of Growth</h1>
 
-          <div className="relative inline-block mb-13 mt-4 w-[700px] ">
+          <div className="relative inline-block mb-13 mt-4 md:w-[700px] ">
             <h1 id="Recognitions" className="text-5xl font-bold text-center">
               Recognitions &{" "}
               <span className="text-[#04AA6D]">Certifications</span>

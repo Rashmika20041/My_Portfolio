@@ -68,7 +68,7 @@ const About = () => {
         </div>
       </div>
 
-      <div className="flex flex-row items-center justify-center h-full text-white justify-between gap-10">
+      <div className="md:flex md:flex-row items-center justify-center h-full text-white justify-between gap-10">
         <img
           src={PI}
           alt="Profile"
@@ -101,7 +101,7 @@ const About = () => {
             opportunities and contribute to meaningful advancements in software
             development
           </p>
-          <hr className="border-t-2 border-gray-700 w-158 mt-4" />
+          <hr className="border-t-2 border-gray-700 md:w-158 mt-4" />
           <div className="flex flex-row items-center">
             <button
               className="bg-[#04AA6D] text-white w-37 h-12 rounded-[50px] font-semibold hover:bg-[#038f5c] transition duration-300 ease-in-out mt-6"

@@ -56,7 +56,7 @@ const Projects = () => {
             Ideas turned into impact
           </h1>
 
-          <div className="relative inline-block mb-13 mt-4 w-[600px] ">
+          <div className="relative inline-block mb-13 mt-4 md:w-[600px] ">
             <h1 id="Devfolio" className="text-5xl font-bold text-center">
               Crafted With<span className="text-[#04AA6D]"> Passion</span>
             </h1>
