@@ -125,13 +125,13 @@ export default function SkillsCarousel() {
      `}
       </style>
 
-      <div className="flex justify-center items-center space-x-8">
+      <div className="flex justify-center items-center space-x-3 md:space-x-8">
         {/* Left Arrow */}
         <button
           onClick={handlePrev}
           className="bg-white/10 hover:bg-white/20 p-2 rounded-full transition rgb-outline"
         >
-          <FaArrowCircleLeft className="text-2xl md:text-3xl" />
+          <FaArrowCircleLeft className="text-lg md:text-3xl" />
         </button>
 
         {/* Skill Icons Row */}
@@ -164,7 +164,7 @@ export default function SkillsCarousel() {
           onClick={handleNext}
           className="bg-white/10 hover:bg-white/20 p-2 rounded-full transition rgb-outline"
         >
-          <FaArrowCircleRight className="text-2xl md:text-3xl" />
+          <FaArrowCircleRight className="text-lg md:text-3xl" />
         </button>
       </div>
 
