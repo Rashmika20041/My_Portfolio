@@ -10,7 +10,7 @@ const Preloader = () => {
       initial={{ opacity: 1 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      transition={{ delay: 1, duration: 0.5 }}
+      transition={{ delay: 2, duration: 0.5 }}
     >
       <motion.h1
         className="text-white text-4xl sm:text-6xl md:text-9xl font-bold flex space-x-1"

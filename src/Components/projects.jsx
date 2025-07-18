@@ -74,7 +74,7 @@ const Projects = () => {
         </div>
       </div>
 
-      <p className="text-left italic text-lg text-gray-400 mt-14 max-w-274 mx-auto leading-relaxed" style={{ fontFamily: "'Poppins', sans-serif", fontWeight: "500" }}>
+      <p className="text-left italic text-sm md:text-lg text-gray-400 mt-14 max-w-95 md:max-w-274 mx-auto leading-relaxed" style={{ fontFamily: "'Poppins', sans-serif", fontWeight: "500" }}>
         While my featured projects below highlight some of my proudest work,
         they’re just the beginning. I’m always building, experimenting, and
         learning. Many of my other creations—ranging from mini tools to
