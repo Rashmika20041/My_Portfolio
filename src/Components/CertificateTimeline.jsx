@@ -59,7 +59,7 @@ const CertificateTimeline = () => {
   const activeCert = certificates[activeIndex];
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 px-4 sm:px-10 md:px-23 pb-20 max-w-7xl mx-auto">
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 px-4 sm:px-10 md:px-23 pb-20 max-w-7xl mx-auto pb-50">
       {/* Left: Timeline */}
       <div className="relative border-l-4 border-[#04AA6D] pl-6 space-y-16">
         {certificates.map((cert, index) => (
