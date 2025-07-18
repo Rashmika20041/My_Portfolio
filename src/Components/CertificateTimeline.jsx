@@ -31,14 +31,12 @@ const certificates = [
     file: AdvancedReact,
     type: "image",
   },
-  
 ];
 
 const CertificateTimeline = () => {
   const itemRefs = useRef([]);
   const [activeIndex, setActiveIndex] = useState(0);
 
-  // Detect which item is centered in the viewport
   useEffect(() => {
     const handleScroll = () => {
       const offsets = itemRefs.current.map((ref) => {
@@ -53,7 +51,7 @@ const CertificateTimeline = () => {
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
-    handleScroll(); // Initial run
+    handleScroll();
 
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -61,7 +59,7 @@ const CertificateTimeline = () => {
   const activeCert = certificates[activeIndex];
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 px-23 pb-40 max-w-7xl mx-auto">
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 px-4 sm:px-10 md:px-23 pb-20 max-w-7xl mx-auto">
       {/* Left: Timeline */}
       <div className="relative border-l-4 border-[#04AA6D] pl-6 space-y-16">
         {certificates.map((cert, index) => (
@@ -78,16 +76,27 @@ const CertificateTimeline = () => {
               </div>
             </div>
             <div className="bg-[#1f1f1f] rounded-lg p-5 shadow-md">
-              <h3 className="text-xl text-white font-semibold">{cert.title}</h3>
-              <p className="text-gray-400">{cert.platform}</p>
-              <p className="text-sm text-gray-500">{cert.date}</p>
+              <h3 className="text-lg sm:text-xl text-white font-semibold">{cert.title}</h3>
+              <p className="text-gray-400 text-sm sm:text-base">{cert.platform}</p>
+              <p className="text-xs text-gray-500">{cert.date}</p>
+            </div>
+
+            {/* Show preview image below each item on mobile */}
+            <div className="mt-4 md:hidden">
+              <div className="bg-[#1a1a1a] border p-1 shadow-lg w-full max-w-md mx-auto">
+                <img
+                  src={cert.file}
+                  alt={cert.title}
+                  className="w-full max-h-[300px] object-contain"
+                />
+              </div>
             </div>
           </div>
         ))}
       </div>
 
-      {/* Right: Certificate Preview with motion */}
-      <div className="sticky mt-14 hidden md:block">
+      {/* Right: Sticky Certificate Preview (Only on Desktop) */}
+      <div className="sticky top-28 mt-14 hidden md:block">
         <div className="bg-[#1a1a1a] border p-1 shadow-lg w-full max-w-md mx-auto">
           <AnimatePresence mode="wait">
             <motion.div
@@ -98,11 +107,11 @@ const CertificateTimeline = () => {
               transition={{ duration: 0.4 }}
               className="rounded overflow-hidden bg-black"
             >
-                <img
-                  src={activeCert.file}
-                  alt={activeCert.title}
-                  className="w-200 max-h-[400px] object-contain"
-                />
+              <img
+                src={activeCert.file}
+                alt={activeCert.title}
+                className="w-full max-h-[400px] object-contain"
+              />
             </motion.div>
           </AnimatePresence>
         </div>
