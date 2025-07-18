@@ -49,10 +49,10 @@ const Skills = () => {
         </style>
 
         <div className="flex flex-col items-center justify-center h-full text-white">
-          <h1 className="text-lg mt-5 text-gray-400">The Tools I Trust</h1>
+          <h1 className="sm:text-sm md:text-lg mt-5 text-gray-400">The Tools I Trust</h1>
 
           <div className="relative inline-block mb-33 mt-4 md:w-[600px] ">
-            <h1 id="toolbox" className="text-5xl font-bold text-center">
+            <h1 id="toolbox" className="text-4xl md:text-5xl font-bold text-center">
               Tech<span className="text-[#04AA6D]"> Stack </span>& Proficiencies
             </h1>
 

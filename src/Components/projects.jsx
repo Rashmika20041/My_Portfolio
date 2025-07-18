@@ -52,12 +52,12 @@ const Projects = () => {
         </style>
 
         <div className="flex flex-col items-center justify-center h-full text-white">
-          <h1 className="text-lg mt-5 text-gray-400">
+          <h1 className="sm:text-sm md:text-lg mt-5 text-gray-400">
             Ideas turned into impact
           </h1>
 
           <div className="relative inline-block mb-13 mt-4 md:w-[600px] ">
-            <h1 id="Devfolio" className="text-5xl font-bold text-center">
+            <h1 id="Devfolio" className="text-4xl md:text-5xl font-bold text-center">
               Crafted With<span className="text-[#04AA6D]"> Passion</span>
             </h1>
 

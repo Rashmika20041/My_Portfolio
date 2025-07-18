@@ -51,10 +51,10 @@ const About = () => {
         </style>
 
         <div className="flex flex-col items-center justify-center h-full text-white">
-          <h1 className="text-lg mt-15 text-gray-400">Get to know me</h1>
+          <h1 className="sm:text-sm md:text-lg mt-15 text-gray-400">Get to know me</h1>
 
           <div className="relative inline-block mb-27 mt-4 w-[300px] ">
-            <h1 className="text-5xl font-bold text-center">About Me</h1>
+            <h1 className="text-4xl md:text-5xl font-bold text-center">About Me</h1>
 
             <div className="flex justify-center">
               <div className="base-line">
@@ -68,27 +68,27 @@ const About = () => {
         </div>
       </div>
 
-      <div className="md:flex md:flex-row items-center justify-center h-full text-white justify-between gap-10">
+      <div className="flex flex-col md:flex-row items-center justify-center justify-between h-full text-white gap-10">
         <img
           src={PI}
           alt="Profile"
-          className="border-4 border-black h-140 w-100 mb-4"
+          className="border-4 border-black h-110 w-80 sm:h-120 sm:w-80 md:h-140 md:w-100 mb-4"
         />
-        <div className="flex flex-col w-1/2 gap-4">
+        <div className="flex flex-col md:w-1/2 md:gap-4 w-3/4 ">
           <h1
-            className="text-2xl text-[#04AA6D] font-semibold w-1/2"
+            className="text-xl md:text-2xl text-[#04AA6D] font-semibold w-1/2"
             style={{ fontFamily: "'Poppins', sans-serif" }}
           >
             Who am i?
           </h1>
           <h1
-            className="text-3xl font-bold leading-[1.5]"
+            className="text-2xl sm:text-2xl md:text-3xl font-bold leading-[1.5]"
             style={{ fontFamily: "'Poppins', sans-serif" }}
           >
             I'm Rashmika Perera, a passionate Full Stack developer and designer
           </h1>
           <p
-            className="text-[16px] text-gray-400 leading-[1.5] leading-[1.6] mt-2"
+            className="text-sm md:text-[16px] text-gray-400 leading-[1.5] leading-[1.6] mt-2"
             style={{ fontFamily: "'Poppins', sans-serif" }}
           >
             I'm Rashmika Perera, a 21-year-old Software Engineering
@@ -114,6 +114,7 @@ const About = () => {
             >
               Download CV
             </button>
+            <div className="hidden md:flex items-center">
             <hr className="border-t-2 border-gray-700 w-20 ml-7 mr-7 mt-6" />
             <FaGithub
               className="text-2xl mt-5 mr-3 text-gray-400 hover:text-[#04AA6D] transition duration-300 ease-in-out cursor-pointer"
@@ -135,6 +136,7 @@ const About = () => {
                 )
               }
             />
+            </div>
           </div>
         </div>
       </div>
