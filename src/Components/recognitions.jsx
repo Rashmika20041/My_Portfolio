@@ -67,7 +67,7 @@ export default function Recognitions() {
             </div>
           </div>
           <p
-            className="text-gray-400 italic text-lg mt-14 mb-25 max-w-5xl mx-auto"
+            className="text-gray-400 italic text-sm md:text-lg mt-14 mb-25 max-w-lg ml-6 md:max-w-5xl mx-auto"
             style={{ fontFamily: "'Poppins', sans-serif" }}
           >
             A visual journey through my learning path. Each milestone represents
