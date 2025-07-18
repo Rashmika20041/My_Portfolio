@@ -32,13 +32,13 @@ const Dashboard = () => {
             <NavigationBar />
             <div className="flex flex-col justify-center text-center h-screen items-center ">
               <h1
-                className="text-white text-6xl sm:text-8xl md:text-9xl font-bold mt-[-150px] mb-10 select-none"
+                className="text-white text-6xl sm:text-8xl md:text-7xl font-bold mt-[-150px] mb-10 select-none"
                 style={{ fontFamily: "'Poppins', sans-serif" }}
               >
                 Rashmika Perera
               </h1>
 
-              <h2 className="text-white text-2xl sm:text-5xl md:text-6xl font-semibold mb-5 select-none">
+              <h2 className="text-white text-2xl sm:text-5xl md:text-4xl font-semibold mb-5 select-none">
                 I'm a{" "}
                 <span
                   style={{
