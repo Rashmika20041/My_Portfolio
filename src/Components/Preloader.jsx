@@ -13,8 +13,8 @@ const Preloader = () => {
       transition={{ delay: 1, duration: 0.5 }}
     >
       <motion.h1
-        className="text-white text-9xl font-bold flex space-x-1"
-        style={{ fontFamily: "'Bebas', Bebas Neue" }}
+        className="text-white text-4xl sm:text-6xl md:text-9xl font-bold flex space-x-1"
+        style={{ fontFamily: "'Bebas Neue', sans-serif" }}
       >
         {letters.map((letter, index) => (
           <motion.span
