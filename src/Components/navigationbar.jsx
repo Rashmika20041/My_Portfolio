@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link } from "react-scroll";
 import { Menu, X } from "lucide-react";
 import { IoClose } from "react-icons/io5";
+import { motion } from "framer-motion";
 
 const NavigationBar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -10,7 +11,11 @@ const NavigationBar = () => {
   const closeMenu = () => setIsOpen(false);
 
   return (
-    <nav className="bg-transparent p-8 relative z-50">
+    <motion.nav className="bg-transparent p-8 relative z-50"
+      initial={{ opacity: 0, y: -20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ delay: 2.0 }}
+      >
       <div className="container mx-auto flex justify-between items-center">
         <h1 className="text-white text-4xl font-bold select-none">Portfolio.</h1>
 
@@ -75,7 +80,7 @@ const NavigationBar = () => {
           ))}
         </ul>
       </div>
-    </nav>
+    </motion.nav>
   );
 };
 
