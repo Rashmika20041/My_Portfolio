@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 const Social = () => {
   return (
     <motion.div
-      className="fixed md:top-3/4 top-6/7 right-0 transform -translate-y-1/2 z-50"
+      className="fixed md:top-3/4 top-6/7 right-0 transform -translate-y-4/5 md:-translate-y-1/2 z-50"
       initial={{ opacity: 0, x: 40 }}
       whileInView={{ opacity: 1, x: 0 }}
       viewport={{ once: true }}
