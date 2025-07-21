@@ -76,13 +76,13 @@ const About = () => {
         />
         <div className="flex flex-col md:w-1/2 md:gap-4 w-3/4 ">
           <h1
-            className="text-xl md:text-2xl text-[#04AA6D] font-semibold w-1/2"
+            className="text-lg md:text-2xl text-[#04AA6D] font-semibold w-1/2"
             style={{ fontFamily: "'Poppins', sans-serif" }}
           >
             Who am i?
           </h1>
           <h1
-            className="text-2xl sm:text-2xl md:text-3xl font-bold leading-[1.5]"
+            className="text-xl sm:text-2xl md:text-3xl font-bold leading-[1.5]"
             style={{ fontFamily: "'Poppins', sans-serif" }}
           >
             I'm Rashmika Perera, a passionate Full Stack developer and designer
