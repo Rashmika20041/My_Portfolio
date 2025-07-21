@@ -93,7 +93,7 @@ const Projects = () => {
         <motion.div
           className="relative flex flex-col md:flex-row justify-center md:justify-start items-center md:h-60 bg-gradient-to-r from-[#022912] via-[#00613c] to-[#01aa6a] mx-4 md:mx-20 px-4 md:px-10 py-6"
           style={{ fontFamily: "'Poppins', sans-serif", fontWeight: "500" }}
-          initial={{ opacity: 0, x: -40 }}
+          initial={{ opacity: 0, x: -20 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 1.0 }}
@@ -128,7 +128,7 @@ const Projects = () => {
         <motion.div
           className="relative flex flex-col md:flex-row justify-center md:justify-between items-center md:h-60 bg-gradient-to-r from-[#245c7a] via-[#003b81] to-[#000e30] mx-4 md:mx-20 px-4 md:px-10 py-6"
           style={{ fontFamily: "'Poppins', sans-serif", fontWeight: "500" }}
-          initial={{ opacity: 0, x: 40 }}
+          initial={{ opacity: 0, x: 10 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 1.0 }}
@@ -165,7 +165,7 @@ const Projects = () => {
         <motion.div
           className="relative flex flex-col md:flex-row justify-center md:justify-start items-center md:h-60 bg-gradient-to-r from-[#004040] via-[#008484] to-[#00c3c3] mx-4 md:mx-20 px-4 md:px-10 py-6"
           style={{ fontFamily: "'Poppins', sans-serif", fontWeight: "500" }}
-          initial={{ opacity: 0, x: -40 }}
+          initial={{ opacity: 0, x: -20 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 1.0 }}
