@@ -4,6 +4,7 @@ import tailwind from "./assets/Tailwind CSS.png";
 import python from "./assets/Python.png";
 import CSharp from "./assets/CSharp.png";
 import { GrMysql } from "react-icons/gr";
+import { IoLogoFirebase } from "react-icons/io5";
 import { SiSpring } from "react-icons/si";
 import {
   FaReact,
@@ -69,6 +70,12 @@ const skills = [
     icon: <GrMysql className="text-[#F29111] w-8 h-8 md:w-20 md:h-20" />,
     description:
       "I am proficient in MySQL, a widely-used relational database management system. I design and manage databases, write complex queries, and optimize performance for efficient data storage and retrieval. My experience includes creating tables, establishing relationships, and implementing indexing strategies to enhance query speed. I also handle data integrity through constraints and transactions. MySQL’s scalability and reliability make it a key component in building robust applications that require structured data management",
+  },
+  {
+    name: "Firebase",
+    icon: <IoLogoFirebase className="text-[#FF7B00] w-8 h-8 md:w-20 md:h-20" />,
+    description:
+      "I am proficient in Firebase, a comprehensive app development platform that provides a variety of tools and services to help developers build high-quality applications. I utilize Firebase for real-time database management, user authentication, and hosting. My experience includes integrating Firebase with front-end frameworks like React to create dynamic, data-driven applications. Firebase's serverless architecture allows me to focus on building features without worrying about infrastructure management, enabling rapid development and deployment.",
   },
 ];
 
