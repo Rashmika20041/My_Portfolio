@@ -1,6 +1,6 @@
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { SiGmail } from "react-icons/si";
-import PI from "./assets/profile.jpg";
+import PI from "./assets/profile1.jpg";
 import { motion } from "framer-motion";
 
 const About = () => {
@@ -72,7 +72,7 @@ const About = () => {
         <img
           src={PI}
           alt="Profile"
-          className="border-4 border-black h-110 w-80 sm:h-120 sm:w-80 md:h-140 md:w-100 mb-4"
+          className="border-4 border-black h-103 w-80 sm:h-113 sm:w-80 md:h-133 md:w-100 mb-4"
         />
         <div className="flex flex-col md:w-1/2 md:gap-4 w-3/4 ">
           <h1
