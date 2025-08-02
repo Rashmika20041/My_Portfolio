@@ -25,7 +25,7 @@ const skills = [
       />
     ),
     description:
-      "I am skilled in Tailwind CSS, a utility-first framework that helps me build fast, responsive, and modern user interfaces. Using Tailwind’s ready-made utility classes, I create clean designs without writing much custom CSS. I efficiently handle responsive layouts, spacing, and styling variations for different screen sizes. I also integrate Tailwind with React to develop interactive, visually appealing web apps. My experience includes customizing Tailwind’s config and building reusable components for maintainable projec",
+      "I am skilled in Tailwind CSS, a utility-first framework that helps me build fast, responsive, and modern user interfaces. Using Tailwind’s ready-made utility classes, I create clean designs without writing much custom CSS. I efficiently handle responsive layouts, spacing, and styling variations for different screen sizes. I also integrate Tailwind with React to develop interactive, visually appealing web apps. My experience includes customizing Tailwind’s config and building reusable components for maintainable project",
   },
   {
     name: "React",
@@ -75,7 +75,7 @@ const skills = [
     name: "Firebase",
     icon: <IoLogoFirebase className="text-[#FF7B00] w-8 h-8 md:w-20 md:h-20" />,
     description:
-      "I am proficient in Firebase, a comprehensive app development platform that provides a variety of tools and services to help developers build high-quality applications. I utilize Firebase for real-time database management, user authentication, and hosting. My experience includes integrating Firebase with front-end frameworks like React to create dynamic, data-driven applications. Firebase's serverless architecture allows me to focus on building features without worrying about infrastructure management, enabling rapid development and deployment.",
+      "I am proficient in Firebase, a comprehensive app development platform that provides a variety of tools and services to help developers build high-quality applications. I utilize Firebase for real-time database management, user authentication, and hosting. My experience includes integrating Firebase with front-end frameworks like React to create dynamic, data-driven applications. Firebase's serverless architecture allows me to focus on building features without worrying about infrastructure management, enabling rapid development and deployment",
   },
 ];
 
