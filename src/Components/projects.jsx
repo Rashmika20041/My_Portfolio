@@ -91,41 +91,6 @@ const Projects = () => {
       {/* Project Cards */}
       <div className="space-y-10 mt-14">
 
-        {/* MovieWorld */}
-        <motion.div
-          className="relative flex flex-col md:flex-row justify-center md:justify-start items-center md:h-60 bg-gradient-to-r from-[#022912] via-[#00613c] to-[#01aa6a] mx-4 md:mx-20 px-4 md:px-10 py-6"
-          style={{ fontFamily: "'Poppins', sans-serif", fontWeight: "500" }}
-          initial={{ opacity: 0, x: -20 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 1.0 }}
-        >
-          <img
-            src={movieSite}
-            alt="Project Demo"
-            className="w-full md:w-92 h-auto md:h-70 border-y-[20px] md:border-y-[40px] border-x-2 md:border-x-5 rounded-2xl border-[#075219] object-cover mb-6 md:mb-0 md:ml-9"
-          />
-          <div className="text-center md:text-left w-full md:w-3/6 md:ml-20">
-            <h2 className="text-white text-xl md:text-2xl font-bold mb-2">
-              Movie World
-            </h2>
-            <p className="text-white/80 italic text-sm md:text-base mb-4 md:mb-6">
-              Interactive movie site with search and filter features.
-            </p>
-            <button
-              className="bg-[#0141aa] hover:bg-[#00190e] text-white text-xs md:text-sm font-semibold px-4 md:px-5 py-2 md:py-3 rounded-full transition"
-              onClick={() =>
-                window.open(
-                  "https://rashmika20041.github.io/MovieWorld-WebSite/",
-                  "_blank"
-                )
-              }
-            >
-              Visit Site &rarr;
-            </button>
-          </div>
-        </motion.div>
-
         {/* Daily Bloom */}
         <motion.div
           className="relative flex flex-col md:flex-row justify-center md:justify-between items-center md:h-60 bg-gradient-to-r from-[#F2B21B] via-[#F2CB1B] to-[#EBF21B] mx-4 md:mx-20 px-4 md:px-10 py-6"
@@ -159,6 +124,41 @@ const Projects = () => {
             alt="Project Demo"
             className="w-full md:w-92 h-auto md:h-70 border-y-[20px] md:border-y-[40px] border-x-2 md:border-x-5 rounded-2xl border-[#FFB217] object-cover md:mr-9"
           />
+        </motion.div>
+
+        {/* MovieWorld */}
+        <motion.div
+          className="relative flex flex-col md:flex-row justify-center md:justify-start items-center md:h-60 bg-gradient-to-r from-[#022912] via-[#00613c] to-[#01aa6a] mx-4 md:mx-20 px-4 md:px-10 py-6"
+          style={{ fontFamily: "'Poppins', sans-serif", fontWeight: "500" }}
+          initial={{ opacity: 0, x: -20 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 1.0 }}
+        >
+          <img
+            src={movieSite}
+            alt="Project Demo"
+            className="w-full md:w-92 h-auto md:h-70 border-y-[20px] md:border-y-[40px] border-x-2 md:border-x-5 rounded-2xl border-[#075219] object-cover mb-6 md:mb-0 md:ml-9"
+          />
+          <div className="text-center md:text-left w-full md:w-3/6 md:ml-20">
+            <h2 className="text-white text-xl md:text-2xl font-bold mb-2">
+              Movie World
+            </h2>
+            <p className="text-white/80 italic text-sm md:text-base mb-4 md:mb-6">
+              Interactive movie site with search and filter features.
+            </p>
+            <button
+              className="bg-[#0141aa] hover:bg-[#00190e] text-white text-xs md:text-sm font-semibold px-4 md:px-5 py-2 md:py-3 rounded-full transition"
+              onClick={() =>
+                window.open(
+                  "https://rashmika20041.github.io/MovieWorld-WebSite/",
+                  "_blank"
+                )
+              }
+            >
+              Visit Site &rarr;
+            </button>
+          </div>
         </motion.div>
 
         {/* Pharmacy */}
