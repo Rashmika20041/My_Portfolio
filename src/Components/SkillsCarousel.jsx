@@ -35,12 +35,6 @@ const skills = [
       "I am proficient in React, a powerful JavaScript library for building dynamic and responsive user interfaces. I create reusable components and manage state efficiently to build scalable web applications. With React’s virtual DOM, I optimize rendering performance and deliver smooth user experiences. I also integrate React with modern tools like hooks, context API, and third-party libraries to enhance functionality. My experience includes building single-page applications, handling routing, and connecting front-end with APIs for seamless data flow",
   },
   {
-    name: "JAVA",
-    icon: <FaJava className="text-orange-500 text-3xl md:text-7xl" />,
-    description:
-      "I am skilled in Java, a versatile and widely-used programming language known for its portability and robustness. I use Java to build reliable, high-performance applications ranging from desktop software to web backends. My experience includes object-oriented programming principles, exception handling, and working with Java frameworks like Spring Boot. I am comfortable with writing clean, maintainable code and implementing data structures and algorithms. Additionally, I integrate Java applications with databases to create efficient, scalable solutions",
-  },
-  {
     name: "Spring Boot",
     icon: <SiSpring className="text-green-500 text-3xl md:text-7xl" />,
     description:
@@ -51,6 +45,12 @@ const skills = [
     icon: <SiTypescript className="text-cyan-400 text-3xl md:text-7xl" />,
     description:
       "I am proficient in TypeScript, a superset of JavaScript that adds static types to the language. I use TypeScript to build robust, maintainable applications by catching errors at compile time and improving code quality. My experience includes working with TypeScript in React projects, leveraging its features like interfaces, generics, and type inference to create scalable components. TypeScript enhances my development workflow by providing better tooling, autocompletion, and documentation, making it easier to collaborate with teams and manage large codebases",
+  },
+  {
+    name: "JAVA",
+    icon: <FaJava className="text-orange-500 text-3xl md:text-7xl" />,
+    description:
+      "I am skilled in Java, a versatile and widely-used programming language known for its portability and robustness. I use Java to build reliable, high-performance applications ranging from desktop software to web backends. My experience includes object-oriented programming principles, exception handling, and working with Java frameworks like Spring Boot. I am comfortable with writing clean, maintainable code and implementing data structures and algorithms. Additionally, I integrate Java applications with databases to create efficient, scalable solutions",
   },
   {
     name: "Git & GitHub",
