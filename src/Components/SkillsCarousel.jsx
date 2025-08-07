@@ -13,6 +13,7 @@ import {
   FaArrowCircleLeft,
   FaJava,
 } from "react-icons/fa";
+import { SiTypescript } from "react-icons/si";
 
 const skills = [
   {
@@ -44,6 +45,12 @@ const skills = [
     icon: <SiSpring className="text-green-500 text-3xl md:text-7xl" />,
     description:
       "I am experienced in Spring Boot, a powerful Java framework that simplifies building production-ready backend applications. Using Spring Boot, I rapidly develop RESTful APIs, microservices, and web applications with minimal configuration. I leverage its features like auto-configuration, embedded servers, and starter dependencies to speed up development. My skills include working with Spring Data JPA for database integration, implementing security, and managing application properties. Spring Boot helps me create scalable, maintainable, and efficient server-side solutions",
+  },
+  {
+    name: "TypeScript",
+    icon: <SiTypescript className="text-cyan-400 text-3xl md:text-7xl" />,
+    description:
+      "I am proficient in TypeScript, a superset of JavaScript that adds static types to the language. I use TypeScript to build robust, maintainable applications by catching errors at compile time and improving code quality. My experience includes working with TypeScript in React projects, leveraging its features like interfaces, generics, and type inference to create scalable components. TypeScript enhances my development workflow by providing better tooling, autocompletion, and documentation, making it easier to collaborate with teams and manage large codebases",
   },
   {
     name: "Git & GitHub",
