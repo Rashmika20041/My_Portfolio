@@ -91,41 +91,6 @@ const Projects = () => {
       {/* Project Cards */}
       <div className="space-y-10 mt-14">
 
-        {/* Daily Bloom */}
-        <motion.div
-          className="relative flex flex-col md:flex-row justify-center md:justify-between items-center md:h-60 bg-gradient-to-r from-[#F2B21B] via-[#F2CB1B] to-[#EBF21B] mx-4 md:mx-20 px-4 md:px-10 py-6"
-          style={{ fontFamily: "'Poppins', sans-serif", fontWeight: "500" }}
-          initial={{ opacity: 0, x: 10 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 1.0 }}
-        >
-          <div className="text-center md:text-left w-full md:w-1/2 mb-6 md:mb-0">
-            <h2 className="text-white text-xl md:text-3xl font-bold mb-2">
-              Daily Bloom
-            </h2>
-            <p className="text-white/80 italic text-sm md:text-base mb-4 md:mb-6">
-              Boost productivity with daily tasks
-            </p>
-            <button
-              className="bg-[#FF5517] hover:bg-[#FF8B17] text-white text-xs md:text-sm font-semibold px-4 md:px-5 py-2 md:py-3 rounded-full transition"
-              onClick={() =>
-                window.open(
-                  "https://dailybloom-todo.vercel.app/"
-                )
-              }
-            >
-              Visit Site &rarr;
-            </button>
-          </div>
-
-          <img
-            src={dailybloom}
-            alt="Project Demo"
-            className="w-full md:w-92 h-auto md:h-70 border-y-[20px] md:border-y-[40px] border-x-2 md:border-x-5 rounded-2xl border-[#FFB217] object-cover md:mr-9"
-          />
-        </motion.div>
-
         {/* MovieWorld */}
         <motion.div
           className="relative flex flex-col md:flex-row justify-center md:justify-start items-center md:h-60 bg-gradient-to-r from-[#022912] via-[#00613c] to-[#01aa6a] mx-4 md:mx-20 px-4 md:px-10 py-6"
@@ -159,6 +124,41 @@ const Projects = () => {
               Visit Site &rarr;
             </button>
           </div>
+        </motion.div>
+
+        {/* Daily Bloom */}
+        <motion.div
+          className="relative flex flex-col md:flex-row justify-center md:justify-between items-center md:h-60 bg-gradient-to-r from-[#F2B21B] via-[#F2CB1B] to-[#EBF21B] mx-4 md:mx-20 px-4 md:px-10 py-6"
+          style={{ fontFamily: "'Poppins', sans-serif", fontWeight: "500" }}
+          initial={{ opacity: 0, x: 10 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 1.0 }}
+        >
+          <div className="text-center md:text-left w-full md:w-1/2 mb-6 md:mb-0">
+            <h2 className="text-white text-xl md:text-3xl font-bold mb-2">
+              Daily Bloom
+            </h2>
+            <p className="text-white/80 italic text-sm md:text-base mb-4 md:mb-6">
+              Boost productivity with daily tasks
+            </p>
+            <button
+              className="bg-[#FF5517] hover:bg-[#FF8B17] text-white text-xs md:text-sm font-semibold px-4 md:px-5 py-2 md:py-3 rounded-full transition"
+              onClick={() =>
+                window.open(
+                  "https://dailybloom-todo.vercel.app/"
+                )
+              }
+            >
+              Visit Site &rarr;
+            </button>
+          </div>
+
+          <img
+            src={dailybloom}
+            alt="Project Demo"
+            className="w-full md:w-92 h-auto md:h-70 border-y-[20px] md:border-y-[40px] border-x-2 md:border-x-5 rounded-2xl border-[#FFB217] object-cover md:mr-9"
+          />
         </motion.div>
 
         {/* Pharmacy */}
