@@ -171,7 +171,7 @@ const Projects = () => {
           transition={{ duration: 1.0 }}
         >
           <div className="text-center md:text-left w-full md:w-1/2 mb-6 md:mb-0">
-            <h2 className="text-white text-xl md:text-3xl font-bold mb-2">
+            <h2 className="text-white text-xl md:text-2xl font-bold mb-2">
               Pharmacy Management System
             </h2>
             <p className="text-white/80 italic text-sm md:text-base mb-4 md:mb-6">
