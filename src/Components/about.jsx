@@ -107,7 +107,7 @@ const About = () => {
               className="bg-[#04AA6D] text-white w-37 h-12 rounded-[50px] font-semibold hover:bg-[#038f5c] transition duration-300 ease-in-out mt-6"
               onClick={() =>
                 window.open(
-                  "https://drive.google.com/file/d/1xlqfh1SNRFGcwJWxzDnhcKxwM2_PeMeh/view?usp=sharing",
+                  "https://drive.google.com/file/d/1-NbpMqXO7p1H51LvW8AezuhDb6mVhJIM/view?usp=sharing",
                   "_blank"
                 )
               }
