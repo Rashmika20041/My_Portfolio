@@ -1,7 +1,7 @@
 import Certificates from "./CertificateTimeline";
 import { motion } from "framer-motion";
 
-export default function Recognitions() {
+const Recognitions = () => {
   return (
     <motion.div
       initial={{ opacity: 0, y: 100 }}
@@ -81,3 +81,5 @@ export default function Recognitions() {
     </motion.div>
   );
 }
+
+export default Recognitions;

@@ -2,7 +2,7 @@ import dailybloom from "./assets/dailybloom.png";
 import movieSite from "./assets/movieSite.png";
 import pharmacy from "./assets/pharmacy.png";
 
-const projects = [
+const project = [
   {
     title: "Daily Bloom",
     description: "Boost productivity with daily tasks.",
@@ -26,4 +26,4 @@ const projects = [
   },
 ];
 
-export default projects;
+export default project;

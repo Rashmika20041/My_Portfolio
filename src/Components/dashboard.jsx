@@ -5,7 +5,7 @@ import bg2 from "./assets/background2.jpg";
 import NavigationBar from "./navigationbar";
 import About from "./about";
 import Skills from "./skills";
-import Project from "./projects";
+import Project from "./projects.jsx";
 import Footer from "./footer";
 import Social from "./social";
 import Recognitions from "./recognitions";

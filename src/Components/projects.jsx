@@ -1,5 +1,5 @@
 import { motion, useMotionValue, useTransform } from "framer-motion";
-import projects from "./projects";
+import project from "./project";
 
 const Projects = () => {
   return (
@@ -31,7 +31,7 @@ const Projects = () => {
 
       {/* Project Cards */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 px-4 md:px-20">
-        {projects.map((proj, index) => {
+        {project.map((proj, index) => {
           // Motion values for cursor tracking
           const x = useMotionValue(0);
           const y = useMotionValue(0);
