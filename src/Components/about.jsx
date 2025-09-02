@@ -2,8 +2,22 @@ import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { SiGmail } from "react-icons/si";
 import PI from "./assets/profile1.jpg";
 import { motion } from "framer-motion";
+import { useState } from "react";
 
 const About = () => {
+  const [translate, setTranslate] = useState({ x: 0, y: 0 });
+
+  const handleMouseMove = (e) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    const offsetX = (e.clientX - rect.left - rect.width / 2) / 5;
+    const offsetY = (e.clientY - rect.top - rect.height / 2) / 5;
+    setTranslate({ x: offsetX, y: offsetY });
+  };
+
+  const handleMouseLeave = () => {
+    setTranslate({ x: 0, y: 0 });
+  };
+
   return (
     <motion.div
       id="about"
@@ -51,10 +65,14 @@ const About = () => {
         </style>
 
         <div className="flex flex-col items-center justify-center h-full text-white">
-          <h1 className="sm:text-sm md:text-lg mt-15 text-gray-400">Get to know me</h1>
+          <h1 className="sm:text-sm md:text-lg mt-15 text-gray-400">
+            Get to know me
+          </h1>
 
           <div className="relative inline-block mb-27 mt-4 w-[300px] ">
-            <h1 className="text-4xl md:text-5xl font-bold text-center">About Me</h1>
+            <h1 className="text-4xl md:text-5xl font-bold text-center">
+              About Me
+            </h1>
 
             <div className="flex justify-center">
               <div className="base-line">
@@ -104,38 +122,43 @@ const About = () => {
           <hr className="border-t-2 border-gray-700 md:w-158 mt-4" />
           <div className="flex flex-row items-center">
             <button
-              className="bg-[#04AA6D] text-white w-37 h-12 rounded-[50px] font-semibold hover:bg-[#038f5c] transition duration-300 ease-in-out mt-6"
+              className="bg-[#04AA6D] text-white w-37 h-12 rounded-[50px] font-semibold mt-6 transition-transform duration-200 ease-out"
               onClick={() =>
                 window.open(
                   "https://drive.google.com/file/d/1-NbpMqXO7p1H51LvW8AezuhDb6mVhJIM/view?usp=sharing",
                   "_blank"
                 )
               }
+              onMouseMove={handleMouseMove}
+              onMouseLeave={handleMouseLeave}
+              style={{
+                transform: `translate(${translate.x}px, ${translate.y}px)`,
+              }}
             >
               Download CV
             </button>
             <div className="hidden md:flex items-center">
-            <hr className="border-t-2 border-gray-700 w-20 ml-7 mr-7 mt-6" />
-            <FaGithub
-              className="text-2xl mt-5 mr-3 text-gray-400 hover:text-[#04AA6D] transition duration-300 ease-in-out cursor-pointer"
-              onClick={() => window.open("https://github.com/Rashmika20041")}
-            />
-            <FaLinkedin
-              className="text-2xl mt-5 mr-3 text-gray-400 hover:text-[#04AA6D] transition duration-300 ease-in-out cursor-pointer"
-              onClick={() =>
-                window.open(
-                  "https://www.linkedin.com/in/rashmika-perera-b49142291/"
-                )
-              }
-            />
-            <SiGmail
-              className="text-2xl mt-5 text-gray-400 hover:text-[#04AA6D] transition duration-300 ease-in-out cursor-pointer"
-              onClick={() =>
-                window.open(
-                  "mailto:rashmikaperera330@gmail.com?subject=Hello&body=I%20saw%20your%20portfolio"
-                )
-              }
-            />
+              <hr className="border-t-2 border-gray-700 w-20 ml-7 mr-7 mt-6" />
+              <FaGithub
+                className="text-2xl mt-5 mr-3 text-gray-400 hover:text-[#04AA6D] transition duration-300 ease-in-out cursor-pointer"
+                onClick={() => window.open("https://github.com/Rashmika20041")}
+              />
+              <FaLinkedin
+                className="text-2xl mt-5 mr-3 text-gray-400 hover:text-[#04AA6D] transition duration-300 ease-in-out cursor-pointer"
+                onClick={() =>
+                  window.open(
+                    "https://www.linkedin.com/in/rashmika-perera-b49142291/"
+                  )
+                }
+              />
+              <SiGmail
+                className="text-2xl mt-5 text-gray-400 hover:text-[#04AA6D] transition duration-300 ease-in-out cursor-pointer"
+                onClick={() =>
+                  window.open(
+                    "mailto:rashmikaperera330@gmail.com?subject=Hello&body=I%20saw%20your%20portfolio"
+                  )
+                }
+              />
             </div>
           </div>
         </div>

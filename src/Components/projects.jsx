@@ -1,234 +1,100 @@
-import bg from "./assets/react.jpg";
-import movieSite from "./assets/movieSite.png";
-import pharmacy from "./assets/pharmacy.png";
-import biofilm from "./assets/biofilm.png";
-import dailybloom from "./assets/dailybloom.png";
-import { motion } from "framer-motion";
+import { motion, useMotionValue, useTransform } from "framer-motion";
+import projects from "./projects";
 
 const Projects = () => {
   return (
-    <motion.div
-      className="py-2"
-      initial={{ opacity: 0, y: 100 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 1.0, ease: "easeInOut" }}
-    >
-      <div>
-        <style>
-          {`
-              @keyframes dashGap {
-                0% {
-                  transform: translateX(-10px);
-                }
-                100% {
-                  transform: translateX(800%);
-                }
-              }
+    <div className="py-12">
+      {/* Section Title */}
+      <div className="flex flex-col items-center justify-center h-full text-white mb-12">
+        <h1 className="sm:text-sm md:text-lg text-gray-400">Ideas Brought to Life</h1>
 
-              .base-line {
-                position: absolute;
-                bottom: -40px;
-                width: 30%;
-                height: 4px;
-                background-color: #04AA6D;
-                overflow: hidden;
-              }
-
-              .gap-strip {
-                display: flex;
-                gap: 5px;
-                animation: dashGap 4s linear infinite;
-                position: absolute;
-                height: 4px;
-              }
-
-              .gap {
-                width: 5px;
-                height: 4px;
-                background-color: black;
-              }
-            `}
-        </style>
-
-        <div className="flex flex-col items-center justify-center h-full text-white">
-          <h1 className="sm:text-sm md:text-lg mt-5 text-gray-400">
-            Ideas turned into impact
+        <div className="relative inline-block mb-13 mt-4 md:w-[700px]">
+          <h1 id="Devfolio" className="text-4xl md:text-5xl font-bold text-center">
+            Crafted With <span className="text-[#04AA6D]">Passion</span>
           </h1>
 
-          <div className="relative inline-block mb-13 mt-4 md:w-[600px] ">
-            <h1
-              id="Devfolio"
-              className="text-3xl sm:text-4xl md:text-5xl font-bold text-center"
-            >
-              Crafted With<span className="text-[#04AA6D]"> Passion</span>
-            </h1>
-
-            <div className="flex justify-center">
-              <div className="base-line">
-                <div className="gap-strip">
-                  <div className="gap"></div>
-                  <div className="gap"></div>
-                  <div className="gap"></div>
-                </div>
+          <div className="flex justify-center">
+            <div className="base-line">
+              <div className="gap-strip">
+                <div className="gap"></div>
+                <div className="gap"></div>
+                <div className="gap"></div>
               </div>
             </div>
           </div>
         </div>
-      </div>
 
-      <p
-        className="text-left italic text-sm md:text-lg text-gray-400 mt-14 max-w-[90%] md:max-w-[87%] mx-auto leading-relaxed"
-        style={{ fontFamily: "'Poppins', sans-serif", fontWeight: "500" }}
-      >
-        While my featured projects below highlight some of my proudest work,
-        they’re just the beginning. I’m always building, experimenting, and
-        learning. Many of my other creations—ranging from mini tools to
-        full-stack apps—are available on my GitHub. Feel free to explore them
-        and see the journey behind the code!
-      </p>
+        <p className="text-gray-400 italic text-sm md:text-lg mt-14 mb-15 max-w-lg px-6 md:max-w-5xl mx-auto">
+          Some of my projects, built with dedication and creativity. Explore and see the magic in action!
+        </p>
+      </div>
 
       {/* Project Cards */}
-      <div className="space-y-10 mt-14">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 px-4 md:px-20">
+        {projects.map((proj, index) => {
+          // Motion values for cursor tracking
+          const x = useMotionValue(0);
+          const y = useMotionValue(0);
 
-        {/* Daily Bloom */}
-        <motion.div
-          className="relative flex flex-col md:flex-row justify-center md:justify-between items-center md:h-60 bg-gradient-to-r from-[#F2B21B] via-[#F2CB1B] to-[#EBF21B] mx-4 md:mx-20 px-4 md:px-10 py-6"
-          style={{ fontFamily: "'Poppins', sans-serif", fontWeight: "500" }}
-          initial={{ opacity: 0, x: 10 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 1.0 }}
-        >
-          <div className="text-center md:text-left w-full md:w-1/2 mb-6 md:mb-0">
-            <h2 className="text-white text-xl md:text-2xl font-bold mb-2">
-              Daily Bloom
-            </h2>
-            <p className="text-white/80 italic text-sm md:text-base mb-4 md:mb-6">
-              Boost productivity with daily tasks
-            </p>
-            <button
-              className="bg-[#FF5517] hover:bg-[#FF8B17] text-white text-xs md:text-sm font-semibold px-4 md:px-5 py-2 md:py-3 rounded-full transition"
-              onClick={() =>
-                window.open(
-                  "https://dailybloom-todo.vercel.app/"
-                )
-              }
+          const handleMouseMove = (e) => {
+            const rect = e.currentTarget.getBoundingClientRect();
+            const offsetX = e.clientX - rect.left - rect.width / 2;
+            const offsetY = e.clientY - rect.top - rect.height / 2;
+
+            x.set(offsetX * 0.1); // adjust factor for subtle movement
+            y.set(offsetY * 0.1);
+          };
+
+          const handleMouseLeave = () => {
+            x.set(0);
+            y.set(0);
+          };
+
+          return (
+            <motion.div
+              key={index}
+              className="relative group bg-gray-900 rounded-2xl overflow-hidden shadow-lg cursor-pointer"
+              style={{ x, y }}
+              onMouseMove={handleMouseMove}
+              onMouseLeave={handleMouseLeave}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: index * 0.2 }}
             >
-              Visit Site &rarr;
-            </button>
-          </div>
+              {/* Project Image */}
+              <img
+                src={proj.image}
+                alt={proj.title}
+                className="w-full h-72 object-cover group-hover:scale-105 transition-transform duration-300"
+              />
 
-          <img
-            src={dailybloom}
-            alt="Project Demo"
-            className="w-full md:w-92 h-auto md:h-70 border-y-[20px] md:border-y-[40px] border-x-2 md:border-x-5 rounded-2xl border-[#FFB217] object-cover md:mr-9"
-          />
-        </motion.div>
-
-        {/* MovieWorld */}
-        <motion.div
-          className="relative flex flex-col md:flex-row justify-center md:justify-start items-center md:h-60 bg-gradient-to-r from-[#022912] via-[#00613c] to-[#01aa6a] mx-4 md:mx-20 px-4 md:px-10 py-6"
-          style={{ fontFamily: "'Poppins', sans-serif", fontWeight: "500" }}
-          initial={{ opacity: 0, x: -20 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 1.0 }}
-        >
-          <img
-            src={movieSite}
-            alt="Project Demo"
-            className="w-full md:w-92 h-auto md:h-70 border-y-[20px] md:border-y-[40px] border-x-2 md:border-x-5 rounded-2xl border-[#075219] object-cover mb-6 md:mb-0 md:ml-9"
-          />
-          <div className="text-center md:text-left w-full md:w-3/6 md:ml-20">
-            <h2 className="text-white text-xl md:text-2xl font-bold mb-2">
-              Movie World
-            </h2>
-            <p className="text-white/80 italic text-sm md:text-base mb-4 md:mb-6">
-              Interactive movie site with search and filter features.
-            </p>
-            <button
-              className="bg-[#0141aa] hover:bg-[#00190e] text-white text-xs md:text-sm font-semibold px-4 md:px-5 py-2 md:py-3 rounded-full transition"
-              onClick={() =>
-                window.open(
-                  "https://rashmika20041.github.io/MovieWorld-WebSite/",
-                  "_blank"
-                )
-              }
-            >
-              Visit Site &rarr;
-            </button>
-          </div>
-        </motion.div>
-
-        {/* Pharmacy */}
-        <motion.div
-          className="relative flex flex-col md:flex-row justify-center md:justify-between items-center md:h-60 bg-gradient-to-r from-[#245c7a] via-[#003b81] to-[#000e30] mx-4 md:mx-20 px-4 md:px-10 py-6"
-          style={{ fontFamily: "'Poppins', sans-serif", fontWeight: "500" }}
-          initial={{ opacity: 0, x: 10 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 1.0 }}
-        >
-          <div className="text-center md:text-left w-full md:w-1/2 mb-6 md:mb-0">
-            <h2 className="text-white text-xl md:text-2xl font-bold mb-2">
-              Pharmacy Management System
-            </h2>
-            <p className="text-white/80 italic text-sm md:text-base mb-4 md:mb-6">
-              Full-stack system managing pharmacy inventory, sales, and customer
-              orders.
-            </p>
-            <button
-              className="bg-[#002718] hover:bg-[#00190e] text-white text-xs md:text-sm font-semibold px-4 md:px-5 py-2 md:py-3 rounded-full transition"
-              onClick={() =>
-                window.open(
-                  "https://github.com/Rashmika20041?tab=repositories",
-                  "_blank"
-                )
-              }
-            >
-              See How Did That &rarr;
-            </button>
-          </div>
-
-          <img
-            src={pharmacy}
-            alt="Project Demo"
-            className="w-full md:w-92 h-auto md:h-70 border-y-[20px] md:border-y-[40px] border-x-2 md:border-x-5 rounded-2xl border-[#002b92] object-cover md:mr-9"
-          />
-        </motion.div>
-
-        {/* Biofilm */}
-        <motion.div
-          className="relative flex flex-col md:flex-row justify-center md:justify-start items-center md:h-60 bg-gradient-to-r from-[#004040] via-[#008484] to-[#00c3c3] mx-4 md:mx-20 px-4 md:px-10 py-6"
-          style={{ fontFamily: "'Poppins', sans-serif", fontWeight: "500" }}
-          initial={{ opacity: 0, x: -20 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 1.0 }}
-        >
-          <img
-            src={biofilm}
-            alt="Project Demo"
-            className="w-full md:w-92 h-auto md:h-70 border-y-[20px] md:border-y-[40px] border-x-2 md:border-x-5 rounded-2xl border-[#01aaaa] object-cover mb-6 md:mb-0 md:ml-9"
-          />
-          <div className="text-center md:text-left w-full md:w-3/6 md:ml-20">
-            <h2 className="text-white text-xl md:text-2xl font-bold mb-2">
-              Biofilm
-            </h2>
-            <p className="text-white/80 italic text-sm md:text-base mb-4 md:mb-6">
-              Modern fertilizer site showcasing products and benefits.
-            </p>
-            <button
-              className="bg-[#12b34a] hover:bg-[#00190e] text-white text-xs md:text-sm font-semibold px-4 md:px-5 py-2 md:py-3 rounded-full transition"
-              onClick={() => window.open("https://biofilm.lk/", "_blank")}
-            >
-              Visit Site &rarr;
-            </button>
-          </div>
-        </motion.div>
+              {/* Overlay on hover */}
+              <div className="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-center items-center p-6">
+                <h2 className="text-xl md:text-2xl font-bold text-white mb-2">{proj.title}</h2>
+                <p className="text-gray-300 italic text-sm md:text-base mb-4 text-center">{proj.description}</p>
+                <div className="flex flex-wrap justify-center gap-2 mb-4">
+                  {proj.tech.map((t, i) => (
+                    <span
+                      key={i}
+                      className="text-xs md:text-sm bg-[#04AA6D] px-2 py-1 rounded-full text-white"
+                    >
+                      {t}
+                    </span>
+                  ))}
+                </div>
+                <button
+                  onClick={() => window.open(proj.link, "_blank")}
+                  className="bg-[#04AA6D] hover:bg-[#038f5c] text-white px-4 py-2 rounded-full font-semibold text-sm transition-all duration-300 transform hover:scale-105"
+                >
+                  Visit Project &rarr;
+                </button>
+              </div>
+            </motion.div>
+          );
+        })}
       </div>
-    </motion.div>
+    </div>
   );
 };
 
