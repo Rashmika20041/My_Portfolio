@@ -37,7 +37,8 @@ const Projects = () => {
   return (
     <motion.div
       ref={containerRef}
-      className="py-10 relative overflow-hidden"
+      id="Devfolio"
+      className="py-16 relative overflow-hidden"
       initial="hidden"
       animate={isInView ? "visible" : "hidden"}
       variants={containerVariants}
