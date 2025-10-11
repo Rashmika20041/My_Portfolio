@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { useState, useRef } from "react";
+import { motion, AnimatePresence, useMotionValue, useInView } from "framer-motion";
 import tailwind from "./assets/Tailwind CSS.png";
 import python from "./assets/Python.png";
 import CSharp from "./assets/CSharp.png";
@@ -88,6 +88,35 @@ const skills = [
 
 export default function SkillsCarousel() {
   const [centerIndex, setCenterIndex] = useState(0);
+  const [hoveredIndex, setHoveredIndex] = useState(null);
+  const containerRef = useRef(null);
+  const isInView = useInView(containerRef, { once: true, margin: "-100px" });
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+        delayChildren: 0.2,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, scale: 0.8, y: 20 },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      y: 0,
+      transition: {
+        type: "spring",
+        stiffness: 100,
+        damping: 15,
+        duration: 0.6,
+      },
+    },
+  };
 
   const handleNext = () => {
     setCenterIndex((prev) => (prev + 1) % skills.length);
@@ -101,7 +130,55 @@ export default function SkillsCarousel() {
   const rightIndex = (centerIndex + 1) % skills.length;
 
   return (
-    <div className=" text-white text-center ">
+    <motion.div
+      ref={containerRef}
+      className="text-white text-center relative overflow-hidden py-10"
+      initial="hidden"
+      animate={isInView ? "visible" : "hidden"}
+      variants={containerVariants}
+    >
+      {/* Animated Background Elements */}
+      <div className="absolute inset-0 pointer-events-none">
+        <motion.div
+          className="absolute top-10 left-20 w-24 h-24 bg-gradient-to-r from-[#04AA6D] to-transparent rounded-full opacity-5 blur-2xl"
+          animate={{
+            x: [0, 30, 0],
+            y: [0, -20, 0],
+            scale: [1, 1.1, 1],
+          }}
+          transition={{
+            duration: 6,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+        />
+        <motion.div
+          className="absolute bottom-10 right-20 w-32 h-32 bg-gradient-to-l from-[#04AA6D] to-transparent rounded-full opacity-8 blur-3xl"
+          animate={{
+            x: [0, -25, 0],
+            y: [0, 25, 0],
+            rotate: [0, 180, 360],
+          }}
+          transition={{
+            duration: 8,
+            repeat: Infinity,
+            ease: "linear"
+          }}
+        />
+        <motion.div
+          className="absolute top-1/2 right-1/4 w-20 h-20 bg-[#04AA6D] rounded-full opacity-10"
+          animate={{
+            scale: [1, 1.3, 1],
+            opacity: [0.1, 0.2, 0.1],
+          }}
+          transition={{
+            duration: 5,
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: 1
+          }}
+        />
+      </div>
       <style>
         {`
     @keyframes rotateOutline {
@@ -139,19 +216,51 @@ export default function SkillsCarousel() {
      `}
       </style>
 
-      <div className="flex justify-center items-center space-x-3 md:space-x-8">
+      <motion.div
+        className="flex justify-center items-center space-x-3 md:space-x-8 relative z-10"
+        variants={itemVariants}
+      >
         {/* Left Arrow */}
-        <button
+        <motion.button
           onClick={handlePrev}
-          className="bg-white/10 hover:bg-white/20 p-2 rounded-full transition rgb-outline"
+          className="bg-gray-900/50 backdrop-blur-sm border border-gray-800/50 hover:bg-[#04AA6D]/20 hover:border-[#04AA6D] p-3 rounded-full transition-all duration-300 shadow-lg hover:shadow-[#04AA6D]/20"
+          whileHover={{
+            scale: 1.1,
+            rotate: -10,
+          }}
+          whileTap={{ scale: 0.95 }}
+          variants={itemVariants}
         >
-          <FaArrowCircleLeft className="text-lg md:text-3xl" />
-        </button>
+          <FaArrowCircleLeft className="text-lg md:text-3xl text-white hover:text-[#04AA6D] transition-colors duration-300" />
+        </motion.button>
 
         {/* Skill Icons Row */}
-        <div className="flex space-x-10 items-center">
+        <motion.div
+          className="flex space-x-10 items-center"
+          variants={itemVariants}
+        >
           {[leftIndex, centerIndex, rightIndex].map((index, i) => {
             const isCenter = index === centerIndex;
+            const x = useMotionValue(0);
+            const y = useMotionValue(0);
+
+            const handleMouseMove = (e) => {
+              if (!isCenter) return;
+              const rect = e.currentTarget.getBoundingClientRect();
+              const centerX = rect.left + rect.width / 2;
+              const centerY = rect.top + rect.height / 2;
+              const rotateX = (e.clientY - centerY) / 20;
+              const rotateY = (e.clientX - centerX) / 20;
+
+              x.set(rotateY);
+              y.set(-rotateX);
+            };
+
+            const handleMouseLeave = () => {
+              x.set(0);
+              y.set(0);
+            };
+
             return (
               <motion.div
                 key={skills[index].name}
@@ -161,51 +270,132 @@ export default function SkillsCarousel() {
                   opacity: isCenter ? 1 : 0.3,
                 }}
                 transition={{ duration: 0.3 }}
-                className={`w-15 h-15 md:w-42 md:h-42 flex items-center justify-center rounded-full shadow-md select-none ${
-                  isCenter
-                    ? "bg-[#04AA6D]/20 ring-2 ring-[#04AA6D]"
-                    : "bg-white/5"
-                }`}
+                className={`relative group ${isCenter ? 'cursor-pointer' : ''}`}
+                onMouseMove={isCenter ? handleMouseMove : undefined}
+                onMouseLeave={isCenter ? handleMouseLeave : undefined}
+                onHoverStart={() => isCenter && setHoveredIndex(index)}
+                onHoverEnd={() => setHoveredIndex(null)}
+                style={{
+                  rotateX: isCenter ? y : 0,
+                  rotateY: isCenter ? x : 0,
+                  transformStyle: "preserve-3d",
+                }}
               >
-                {skills[index].icon}
+                {/* Glow Effect for Center */}
+                {isCenter && (
+                  <motion.div
+                    className="absolute -inset-2 bg-gradient-to-r from-[#04AA6D] via-transparent to-[#04AA6D] rounded-full opacity-0 group-hover:opacity-30 blur-lg transition-opacity duration-500"
+                    animate={{
+                      opacity: hoveredIndex === index ? 0.3 : 0,
+                    }}
+                  />
+                )}
+
+                <motion.div
+                  className={`w-15 h-15 md:w-42 md:h-42 flex items-center justify-center rounded-full shadow-xl select-none backdrop-blur-sm transition-all duration-500 ${
+                    isCenter
+                      ? "bg-gray-900/50 border-2 border-[#04AA6D]/50 ring-2 ring-[#04AA6D]/20 shadow-[#04AA6D]/20"
+                      : "bg-gray-900/30 border border-gray-800/50"
+                  }`}
+                  whileHover={isCenter ? {
+                    scale: 1.05,
+                    borderColor: "#04AA6D",
+                    boxShadow: "0 25px 50px -12px rgba(4, 170, 109, 0.25)",
+                  } : {}}
+                >
+                  <motion.div
+                    animate={isCenter ? { rotate: [0, 5, -5, 0] } : {}}
+                    transition={{
+                      duration: 4,
+                      repeat: Infinity,
+                      ease: "easeInOut",
+                      delay: index * 0.5
+                    }}
+                  >
+                    {skills[index].icon}
+                  </motion.div>
+                </motion.div>
               </motion.div>
             );
           })}
-        </div>
+        </motion.div>
 
         {/* Right Arrow */}
-        <button
+        <motion.button
           onClick={handleNext}
-          className="bg-white/10 hover:bg-white/20 p-2 rounded-full transition rgb-outline"
+          className="bg-gray-900/50 backdrop-blur-sm border border-gray-800/50 hover:bg-[#04AA6D]/20 hover:border-[#04AA6D] p-3 rounded-full transition-all duration-300 shadow-lg hover:shadow-[#04AA6D]/20"
+          whileHover={{
+            scale: 1.1,
+            rotate: 10,
+          }}
+          whileTap={{ scale: 0.95 }}
+          variants={itemVariants}
         >
-          <FaArrowCircleRight className="text-lg md:text-3xl" />
-        </button>
-      </div>
+          <FaArrowCircleRight className="text-lg md:text-3xl text-white hover:text-[#04AA6D] transition-colors duration-300" />
+        </motion.button>
+      </motion.div>
 
       {/* Description for center skill */}
       <AnimatePresence mode="wait">
         <motion.div
           key={skills[centerIndex].name}
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -20 }}
-          transition={{ duration: 0.3 }}
-          className="mt-15 max-w-sm md:max-w-2xl mx-auto bg-white/10 p-6 rounded-lg backdrop-blur-sm"
+          initial={{ opacity: 0, y: 30, scale: 0.95 }}
+          animate={{ opacity: 1, y: 0, scale: 1 }}
+          exit={{ opacity: 0, y: -30, scale: 0.95 }}
+          transition={{ duration: 0.5, ease: "easeOut" }}
+          className="mt-15 max-w-sm md:max-w-2xl mx-auto bg-gray-900/50 backdrop-blur-sm border border-gray-800/50 p-8 rounded-2xl shadow-2xl hover:shadow-[#04AA6D]/10 transition-all duration-500 relative z-10"
+          whileHover={{
+            borderColor: "#04AA6D",
+            boxShadow: "0 25px 50px -12px rgba(4, 170, 109, 0.25)",
+          }}
         >
-          <h4
-            className="text-2xl font-semibold mt-4 rgb-text select-none"
+          <motion.h4
+            className="text-2xl md:text-3xl font-bold text-white select-none mb-4"
             style={{ fontFamily: "'Poppins', sans-serif" }}
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
           >
-            {skills[centerIndex].name}
-          </h4>
-          <p
-            className="text-sm md:text-base text-gray-400 md:text-gray-400 mt-6 mb-4"
+            <span className="text-[#04AA6D]">{skills[centerIndex].name}</span>
+          </motion.h4>
+          <motion.p
+            className="text-sm md:text-base text-gray-300 leading-relaxed"
             style={{ fontFamily: "'Poppins', sans-serif" }}
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
           >
             {skills[centerIndex].description}
-          </p>
+          </motion.p>
+
+          {/* Decorative elements */}
+          <motion.div
+            className="absolute top-4 right-4 w-2 h-2 bg-[#04AA6D] rounded-full"
+            animate={{
+              scale: [1, 1.5, 1],
+              opacity: [0.5, 1, 0.5],
+            }}
+            transition={{
+              duration: 2,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+          />
+          <motion.div
+            className="absolute bottom-4 left-4 w-1 h-1 bg-[#04AA6D] rounded-full"
+            animate={{
+              scale: [1, 1.2, 1],
+              opacity: [0.3, 0.8, 0.3],
+            }}
+            transition={{
+              duration: 3,
+              repeat: Infinity,
+              ease: "easeInOut",
+              delay: 1,
+            }}
+          />
         </motion.div>
       </AnimatePresence>
-    </div>
+    </motion.div>
   );
 }
