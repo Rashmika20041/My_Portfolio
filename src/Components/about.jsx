@@ -125,7 +125,7 @@ const About = () => {
               className="bg-[#04AA6D] text-white w-37 h-12 rounded-[50px] font-semibold mt-6 transition-transform duration-200 ease-out"
               onClick={() =>
                 window.open(
-                  "https://drive.google.com/file/d/1-NbpMqXO7p1H51LvW8AezuhDb6mVhJIM/view?usp=sharing",
+                  "https://drive.google.com/file/d/18lkw-JvVW-LUXE9LV-0n3uJHiKxTGys4/view?usp=sharing",
                   "_blank"
                 )
               }
