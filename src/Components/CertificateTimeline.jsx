@@ -90,7 +90,7 @@ const CertificateTimeline = () => {
   return (
     <motion.div
       ref={containerRef}
-      className="relative overflow-hidden py-20"
+      className="relative overflow-hidden mt-20"
       initial="hidden"
       animate={isInView ? "visible" : "hidden"}
       variants={containerVariants}
@@ -111,7 +111,7 @@ const CertificateTimeline = () => {
           }}
         />
         <motion.div
-          className="absolute bottom-20 right-20 w-24 h-24 bg-gradient-to-l from-[#04AA6D] to-transparent rounded-full opacity-8 blur-2xl"
+          className="absolute bottom-8 right-20 w-24 h-24 bg-gradient-to-l from-[#04AA6D] to-transparent rounded-full opacity-8 blur-2xl"
           animate={{
             x: [0, -40, 0],
             y: [0, 40, 0],
@@ -138,7 +138,7 @@ const CertificateTimeline = () => {
         />
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 px-4 sm:px-10 md:px-23 pb-20 max-w-7xl mx-auto pb-50 relative z-10">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 px-4 sm:px-10 md:px-23 pb-4 max-w-7xl mx-auto pb-8 relative z-10">
       {/* Left: Timeline */}
       <motion.div
         className="relative border-l-4 border-[#04AA6D] pl-6 space-y-12"

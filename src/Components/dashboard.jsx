@@ -9,6 +9,7 @@ import Project from "./projects.jsx";
 import Footer from "./footer";
 import Social from "./social";
 import Recognitions from "./recognitions";
+import Contact from "./contact";
 import Preloader from "./Preloader";
 import { Typewriter } from "react-simple-typewriter";
 import { FaArrowUp } from "react-icons/fa";
@@ -189,6 +190,7 @@ const Dashboard = () => {
             <Skills />
             <Project />
             <Recognitions />
+            <Contact />
           </div>
           <Footer />
 

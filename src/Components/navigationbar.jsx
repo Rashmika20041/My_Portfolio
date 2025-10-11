@@ -21,7 +21,7 @@ const NavigationBar = () => {
 
         {/* Desktop Nav */}
         <ul className="hidden md:flex space-x-8 text-xl font-semibold mr-8">
-          {["about", "toolbox", "Devfolio", "Recognitions"].map((item, i) => (
+          {["about", "toolbox", "Devfolio", "Recognitions", "contact"].map((item, i) => (
             <li key={i}>
               <Link
                 to={item}
@@ -36,7 +36,9 @@ const NavigationBar = () => {
                   ? "Toolbox"
                   : item === "Devfolio"
                   ? "Devfolio"
-                  : "Recognitions"}
+                  : item === "Recognitions"
+                  ? "Recognitions"
+                  : "Contact"}
               </Link>
             </li>
           ))}
@@ -58,7 +60,7 @@ const NavigationBar = () => {
       >
         <ul className="flex flex-col mt-10 space-y-6 text-white text-lg font-semibold">
           <IoClose className="sm:right-8 right-9 top-9 text-3xl absolute cursor-pointer" onClick={closeMenu} />
-          {["about", "toolbox", "Devfolio", "Recognitions"].map((item, i) => (
+          {["about", "toolbox", "Devfolio", "Recognitions", "contact"].map((item, i) => (
             <li key={i}>
               <Link
                 to={item}
@@ -74,7 +76,9 @@ const NavigationBar = () => {
                   ? "Toolbox"
                   : item === "Devfolio"
                   ? "Devfolio"
-                  : "Recognitions"}
+                  : item === "Recognitions"
+                  ? "Recognitions"
+                  : "Contact"}
               </Link>
             </li>
           ))}
