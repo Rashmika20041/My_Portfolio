@@ -1,7 +1,7 @@
 import dailybloom from "./assets/dailybloom.png";
 import movieSite from "./assets/movieSite.png";
 import pharmacy from "./assets/pharmacy.png";
-import finance from "./assets/finance.png";
+import finance from "./assets/Finance.png";
 
 const project = [
   {
