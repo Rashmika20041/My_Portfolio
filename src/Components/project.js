@@ -1,6 +1,7 @@
 import dailybloom from "./assets/dailybloom.png";
 import movieSite from "./assets/movieSite.png";
 import pharmacy from "./assets/pharmacy.png";
+import finance from "./assets/finance.png";
 
 const project = [
   {
@@ -9,6 +10,13 @@ const project = [
     image: dailybloom,
     tech: ["React", "Tailwind", "Vercel", "TypeScript"],
     link: "https://dailybloom-todo.vercel.app/",
+  },
+  {
+    title: "Finance Manager",
+    description: "Manage your finances effectively.",
+    image: finance,
+    tech: ["React", "Tailwind", "TypeScript"],
+    link: "https://github.com/Rashmika20041/Personal-Finance-Management-System",
   },
   {
     title: "Movie World",
