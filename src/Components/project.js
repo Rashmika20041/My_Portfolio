@@ -13,7 +13,7 @@ const project = [
   },
   {
     title: "Finance Manager",
-    description: "Manage your finances effectively.",
+    description: "Manage your finances effectively with this web application.",
     image: finance,
     tech: ["React", "Tailwind", "TypeScript"],
     link: "https://github.com/Rashmika20041/Personal-Finance-Management-System",
