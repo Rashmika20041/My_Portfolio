@@ -2,6 +2,7 @@ import dailybloom from "./assets/dailybloom.png";
 import movieSite from "./assets/movieSite.png";
 import pharmacy from "./assets/pharmacy.png";
 import finance from "./assets/finance.png";
+import little from "./assets/littlelemon.png";
 
 const project = [
   {
@@ -32,6 +33,13 @@ const project = [
     tech: ["React", "Spring Boot", "CSS"],
     link: "https://github.com/Rashmika20041?tab=repositories",
   },
+  {
+    title: "Little Lemon Restaurant",
+    description: "Managing restaurant operations.",
+    image: little,
+    tech: ["React", "CSS", "Netlify"],
+    link: "https://sensational-pixie-9ea787.netlify.app/",
+  }
 ];
 
 export default project;
