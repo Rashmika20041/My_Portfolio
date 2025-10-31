@@ -35,7 +35,7 @@ const project = [
   },
   {
     title: "Little Lemon Restaurant",
-    description: "Managing restaurant operations.",
+    description: "Interactive restaurant operations management. (Meta React Course)",
     image: little,
     tech: ["React", "CSS", "Netlify"],
     link: "https://sensational-pixie-9ea787.netlify.app/",
