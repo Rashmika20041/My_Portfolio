@@ -111,9 +111,6 @@ const Preloader = () => {
             animate="animate"
             exit="exit"
           >
-            <h1 className="text-white text-5xl md:text-8xl font-bold tracking-tighter">
-              Welcome.
-            </h1>
           </motion.div>
         )}
       </AnimatePresence>

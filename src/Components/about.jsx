@@ -1,7 +1,7 @@
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { SiGmail } from "react-icons/si";
 import PI from "./assets/profile1.jpg";
-import { motion, useMotionValue, useInView } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import { useState, useRef } from "react";
 
 const About = () => {

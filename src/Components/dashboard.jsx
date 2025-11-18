@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import { AnimatePresence, motion, useScroll, useSpring } from "framer-motion";
 import bg from "./assets/background.png";
 import bg2 from "./assets/background2.jpg";
@@ -13,12 +13,14 @@ import Contact from "./contact";
 import Preloader from "./Preloader";
 import { Typewriter } from "react-simple-typewriter";
 import { FaArrowUp } from "react-icons/fa";
+import Snowfall from "react-snowfall";
 
 const Dashboard = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [cursorVariant, setCursorVariant] = useState("default");
   const [showBackToTop, setShowBackToTop] = useState(false);
+  const [showSnow, setShowSnow] = useState(false);
 
   const { scrollYProgress } = useScroll();
   const scaleX = useSpring(scrollYProgress, {
@@ -30,6 +32,13 @@ const Dashboard = () => {
   useEffect(() => {
     const timer = setTimeout(() => setIsLoading(false), 2200);
     return () => clearTimeout(timer);
+  }, []);
+
+  // Check if it's winter season (November, December, January, February)
+  useEffect(() => {
+    const currentMonth = new Date().getMonth(); // 0-11
+    const isWinter = currentMonth === 10 || currentMonth === 11 || currentMonth === 0 || currentMonth === 1; // Nov, Dec, Jan, Feb
+    setShowSnow(isWinter);
   }, []);
 
   useEffect(() => {
@@ -81,6 +90,25 @@ const Dashboard = () => {
         `}
       </style>
       <AnimatePresence>{isLoading && <Preloader />}</AnimatePresence>
+
+      {/* Snowfall Effect */}
+      {showSnow && (
+        <Snowfall
+          color="white"
+          snowflakeCount={50}
+          style={{
+            position: 'fixed',
+            width: '100vw',
+            height: '100vh',
+            zIndex: 10,
+            pointerEvents: 'none'
+          }}
+          speed={[0.5, 2.0]}
+          wind={[-0.5, 1.0]}
+          radius={[0.5, 3.0]}
+        />
+      )}
+
       {!isLoading && (
         <>
           {/* Scroll Progress Bar */}
@@ -222,7 +250,7 @@ const Dashboard = () => {
 
       {/* Creative Custom Cursor */}
       <motion.div
-        className="fixed top-0 left-0 pointer-events-none z-50"
+        className="fixed top-0 left-0 pointer-events-none z-50 hidden md:block"
         animate={{
           x: mousePosition.x - 20,
           y: mousePosition.y - 20,
