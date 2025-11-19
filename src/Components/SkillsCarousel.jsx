@@ -12,10 +12,17 @@ import {
   FaArrowCircleRight,
   FaArrowCircleLeft,
   FaJava,
+  FaNodeJs,
 } from "react-icons/fa";
 import { SiTypescript } from "react-icons/si";
 
 const skills = [
+  {
+    name: "React",
+    icon: <FaReact className="text-cyan-400 text-3xl md:text-7xl" />,
+    description:
+      "I am proficient in React, a powerful JavaScript library for building dynamic and responsive user interfaces. I create reusable components and manage state efficiently to build scalable web applications. With React’s virtual DOM, I optimize rendering performance and deliver smooth user experiences. I also integrate React with modern tools like hooks, context API, and third-party libraries to enhance functionality. My experience includes building single-page applications, handling routing, and connecting front-end with APIs for seamless data flow",
+  },
   {
     name: "Tailwind CSS",
     icon: (
@@ -29,16 +36,10 @@ const skills = [
       "I am skilled in Tailwind CSS, a utility-first framework that helps me build fast, responsive, and modern user interfaces. Using Tailwind’s ready-made utility classes, I create clean designs without writing much custom CSS. I efficiently handle responsive layouts, spacing, and styling variations for different screen sizes. I also integrate Tailwind with React to develop interactive, visually appealing web apps. My experience includes customizing Tailwind’s config and building reusable components for maintainable project",
   },
   {
-    name: "React",
-    icon: <FaReact className="text-cyan-400 text-3xl md:text-7xl" />,
+    name: "Node.js",
+    icon: <FaNodeJs className="text-green-500 text-3xl md:text-7xl" />,
     description:
-      "I am proficient in React, a powerful JavaScript library for building dynamic and responsive user interfaces. I create reusable components and manage state efficiently to build scalable web applications. With React’s virtual DOM, I optimize rendering performance and deliver smooth user experiences. I also integrate React with modern tools like hooks, context API, and third-party libraries to enhance functionality. My experience includes building single-page applications, handling routing, and connecting front-end with APIs for seamless data flow",
-  },
-  {
-    name: "Spring Boot",
-    icon: <SiSpring className="text-green-500 text-3xl md:text-7xl" />,
-    description:
-      "I am experienced in Spring Boot, a powerful Java framework that simplifies building production-ready backend applications. Using Spring Boot, I rapidly develop RESTful APIs, microservices, and web applications with minimal configuration. I leverage its features like auto-configuration, embedded servers, and starter dependencies to speed up development. My skills include working with Spring Data JPA for database integration, implementing security, and managing application properties. Spring Boot helps me create scalable, maintainable, and efficient server-side solutions",
+      "I am proficient in Node.js, a powerful JavaScript runtime built on Chrome's V8 JavaScript engine. I use Node.js to build scalable network applications and server-side solutions. My experience includes working with Express.js for web frameworks, handling asynchronous operations, and integrating with databases. Node.js enables me to create efficient, high-performance applications using JavaScript on both client and server sides.",
   },
   {
     name: "TypeScript",
