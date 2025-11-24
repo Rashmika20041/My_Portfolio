@@ -14,7 +14,7 @@ const Social = () => {
       <ul className=" flex flex-col items-center space-y-5 pr-10">
         <li>
           <a
-            href="https://github.com/Rashmika20041"
+            href="https://github.com/rashmika-perera"
             target="_blank"
             rel="noopener noreferrer"
             className="text-gray-400 rounded-full hover:text-[#04AA6D] transition"
